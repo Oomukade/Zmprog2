@@ -1,22 +1,24 @@
+#pragma once
 #ifndef LOGGER_H
 #define LOGGER_H
 
 #include <string>
 #include <vector>
 #include <iostream>
+using namespace std;
 
 class Logger {
 public:
     static Logger* GetInstance();
-    void ZarejestrujOperacje(const std::string& operacja);
-    void WyswietlHistorie() const;
+    void Rejestr(const string& operacja);
+    void Historia() const;
 
 private:
     Logger() = default;
     Logger(const Logger&) = delete;
     Logger& operator=(const Logger&) = delete;
     static Logger* instance;
-    std::vector<std::string> historiaOperacji;
+    vector<string> historiaOperacji;
 };
 
 #endif

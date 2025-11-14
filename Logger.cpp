@@ -1,5 +1,5 @@
 #include "Logger.h"
-
+using namespace std;
 Logger* Logger::instance = nullptr;
 
 Logger* Logger::GetInstance() {
@@ -9,13 +9,13 @@ Logger* Logger::GetInstance() {
     return instance;
 }
 
-void Logger::ZarejestrujOperacje(const std::string& operacja) {
+void Logger::Rejestr(const string& operacja) {
     historiaOperacji.push_back(operacja);
 }
 
-void Logger::WyswietlHistorie() const {
-    std::cout << "Historia operacji:\n";
+void Logger::Historia() const {
+    cout << "Historia operacji:\n";
     for (const auto& operacja : historiaOperacji) {
-        std::cout << operacja << std::endl;
+        cout << operacja <<endl;
     }
 }
